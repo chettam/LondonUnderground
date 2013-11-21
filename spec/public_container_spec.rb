@@ -20,6 +20,11 @@ describe "public_container"  do
 	end
 
 	context "should know" do
+
+		it "if it is opened" do
+			container.is_opened = true
+			expect(container.is_opened?).to be_true
+		end
 	
 	end
 	context "should by default" do

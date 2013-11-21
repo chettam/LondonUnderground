@@ -11,6 +11,13 @@ describe Train  do
 			expect(train.capacity).to eq(100)
 		end
 	end
+	context "should know" do
+		it "if it is operational" do
+		train.is_operational = true
+		expect(train.is_operational?).to be_true
+	end
+
+	end
 
 	context "should by default" do
 		
