@@ -6,7 +6,7 @@ class Line
 
 	def initialize
 		self.is_opened = true
-		@stations = []
+		@stations 		 = []
 	end
 
 	def stations
@@ -15,8 +15,5 @@ class Line
 
 	def add(station)
 		stations << station unless station.nil?
-	end
-
-
-	
+	end	
 end

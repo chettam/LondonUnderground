@@ -4,7 +4,7 @@ describe Line  do
 
 	let(:line) {Line.new}
 	let(:station) {Station.new}
-
+	let(:tunnel) {Tunnel.new}
 	context "should have" do
 		it "a name" do
 			line.name = "Northern Line"

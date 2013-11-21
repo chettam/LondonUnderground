@@ -8,9 +8,16 @@ class Station
 
 	def initialize
 		self.is_opened = true
+		@tunnels       = []
 	end
 	
+	def tunnels
+		@tunnels
+	end
 
+	def add(tunnel)
+		tunnels << tunnel unless tunnel.nil?
+	end
 
 	
 end
