@@ -3,12 +3,20 @@ require_relative '../lib/line'
 describe Line  do
 
 	let(:line) {Line.new}
+	let(:station) {Station.new}
 
 	context "should have" do
 		it "a name" do
 			line.name = "Northern Line"
 			expect(line.name).to eq ("Northern Line")
 		end
+
+		it "a station list" do
+			station.name = "old_street"
+			line.add(station)
+			expect(line.stations.first.name).to eq ("old_street")
+		end
+
 	end
 
 	context "should know" do
