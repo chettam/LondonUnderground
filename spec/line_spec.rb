@@ -19,6 +19,9 @@ describe Line  do
 
 	end
 	context "should by default" do
+		it "be opened" do
+			expect(line.is_opened?).to be_true
+		end
 
 	end
 end

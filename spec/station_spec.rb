@@ -21,6 +21,9 @@ describe Station  do
 	end
 
 	context "should by default" do
+		it "be opened" do
+			expect(station.is_opened?).to be_true
+		end
 		
 	end
 end

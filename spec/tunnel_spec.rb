@@ -12,7 +12,7 @@ describe Tunnel  do
 
 	end
 	context "should know" do
-		
+
 		it "if it is opened" do
 			tunnel.is_opened = true
 			expect(tunnel.is_opened?).to be_true
@@ -21,6 +21,9 @@ describe Tunnel  do
 	end
 
 	context "should by default" do
+		it "be opened" do
+			expect(tunnel.is_opened?).to be_true
+		end
 		
 	end
 end

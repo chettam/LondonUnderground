@@ -2,7 +2,7 @@ require_relative 'public_container'
 
 class Train
 
-include PublicContainer
+	include PublicContainer
 
 	def is_operational=(status)
 		self.is_opened = status
