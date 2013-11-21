@@ -14,7 +14,7 @@ describe User  do
 
 	context "should know" do
 		it "if the user currently inside LU" do
-			user.is_inside_lu
+			user.is_inside_lu = true
 			expect(user.is_inside_lu?).to  be_true
 		end
 
@@ -22,7 +22,7 @@ describe User  do
 	# 		user.is_inside(train)
 	# 		expect(user.train).to be_a(Train)
 	# 	end
-	# end
+	end
 	context "should by default" do
 		it "set the user to be outside " do
 			expect(user.is_inside_lu?).not_to be_true
