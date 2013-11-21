@@ -13,9 +13,14 @@ describe Train  do
 	end
 	context "should know" do
 		it "if it is operational" do
-		train.is_operational = true
-		expect(train.is_operational?).to be_true
-	end
+			train.is_operational = true
+			expect(train.is_operational?).to be_true
+		end
+
+		it "if it is operational" do
+			train.is_operational = false
+			expect(train.is_operational?).to be_false
+		end
 
 	end
 
