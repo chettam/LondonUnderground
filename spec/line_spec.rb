@@ -13,9 +13,14 @@ describe Line  do
 
 	context "should know" do
 		it "if it is opened" do
-		line.is_opened = true
-		expect(line.is_opened?).to be_true
-	end
+			line.is_opened = true
+			expect(line.is_opened?).to be_true
+		end
+
+		it "if it is closed" do
+			line.is_opened = false
+			expect(line.is_opened?).to be_false
+		end
 
 	end
 	context "should by default" do

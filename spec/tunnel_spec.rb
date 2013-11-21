@@ -18,6 +18,11 @@ describe Tunnel  do
 			expect(tunnel.is_opened?).to be_true
 		end
 
+		it "if it is closed" do
+			tunnel.is_opened = false
+			expect(tunnel.is_opened?).to be_false
+		end
+
 	end
 
 	context "should by default" do

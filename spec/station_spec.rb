@@ -18,6 +18,11 @@ describe Station  do
 			expect(station.is_opened?).to be_true
 		end
 
+		it "if it is closed" do
+			station.is_opened = false
+			expect(station.is_opened?).to be_false
+		end
+
 	end
 
 	context "should by default" do

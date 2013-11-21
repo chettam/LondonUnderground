@@ -25,6 +25,10 @@ describe "public_container"  do
 			container.is_opened = true
 			expect(container.is_opened?).to be_true
 		end
+	it "if it is closed" do
+		container.is_opened = false
+		expect(container.is_opened?).to be_false
+	end
 	
 	end
 	context "should by default" do
