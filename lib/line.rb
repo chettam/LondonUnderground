@@ -1,6 +1,9 @@
+require_relative 'public_container'
+
 class Line
 
-	attr_accessor :name
+include PublicContainer
+
 	attr_writer :is_opened
 
 def is_opened?

@@ -1,9 +1,7 @@
+require_relative 'public_container'
+
 class Train
 
-	attr_accessor  :capacity
-
-	def initialize
-		
-	end
-
+include PublicContainer
+	
 end
