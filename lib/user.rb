@@ -12,7 +12,14 @@ class User
 
 	def is_inside_lu
 		@is_inside_lu = true
-	end
+	end	
 
+	# def is_inside(train)
+ # 		train
+	# end
+
+	# def train
+	# 	@train
+	# end
 
 end

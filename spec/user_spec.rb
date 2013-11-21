@@ -3,6 +3,7 @@ require_relative '../lib/user'
 describe User  do
 
 	let(:user) {User.new}
+	let(:train) {Train.new}
 
 	context "should have" do
 		it "have a name" do
@@ -16,7 +17,12 @@ describe User  do
 			user.is_inside_lu
 			expect(user.is_inside_lu?).to  be_true
 		end
-	end
+
+	# 	it "if a user is in a train" do
+	# 		user.is_inside(train)
+	# 		expect(user.train).to be_a(Train)
+	# 	end
+	# end
 	context "should by default" do
 		it "set the user to be outside " do
 			expect(user.is_inside_lu?).not_to be_true
