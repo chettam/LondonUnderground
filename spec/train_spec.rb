@@ -20,6 +20,9 @@ describe Train  do
 	end
 
 	context "should by default" do
+		it "be opened" do
+			expect(train.is_operational?).to be_true
+		end
 		
 	end
 end
