@@ -71,4 +71,6 @@ describe Line  do
 			line.add(station)
 		end
 	end
+
+	
 end

@@ -16,9 +16,17 @@ describe "train_container"  do
 			holder.has = train
 			expect(holder.has).to eq(train)
 		end
-	
 	end
 	context "should by default" do
 	
+	end
+
+		def create_line
+		station_names =["Bank","Moorgate","Old Street"]
+		station_names.each do|station_name|
+			station = Station.new
+			station.name = station_name
+			line.add(station)
+		end
 	end
 end

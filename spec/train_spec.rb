@@ -47,6 +47,14 @@ describe Train  do
 			train.is_at = station.tunnels.first
 			expect(train.is_at.name).to eq("Bank-Moorgate")
 		end
+
+		it "how to move to the next location" do
+			create_line
+			create_tunnels
+			train.is_at = line.first_station
+			train.move(line,line.last_station)
+			expect(train.is_at.name).to eq("Bank-Moorgate")
+		end
 	end
 
 	context "should by default" do
@@ -63,6 +71,12 @@ describe Train  do
 			station = Station.new
 			station.name = station_name
 			line.add(station)
+		end
+	end
+	def create_tunnels
+		toward = line.last_station
+		line.stations.each do |station| 
+			line.create_tunnel(station,line.next_station(station,toward)) 
 		end
 	end
 end
