@@ -5,6 +5,7 @@ describe Train  do
 	let(:train) {Train.new}
 	let(:line) {Line.new}
 	let(:station) {Station.new}
+	let(:tunnel) {Tunnel.new}
 
 
 
@@ -40,6 +41,11 @@ describe Train  do
 			expect(train.is_at.name).to eq("Bank")
 		end
 		it "it's current location could be a tunnel" do
+			station.name ="Bank"
+			tunnel.name = "Bank-Moorgate"
+			station.add(tunnel)
+			train.is_at = station.tunnels.first
+			expect(train.is_at.name).to eq("Bank-Moorgate")
 		end
 	end
 
