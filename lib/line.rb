@@ -17,7 +17,11 @@ class Line
 		stations << station unless station.nil?
 	end	
 
-	def last
+	def last_station
 		stations.last
+	end
+
+	def first_station
+		stations.first
 	end
 end

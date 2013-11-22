@@ -32,7 +32,12 @@ describe Line  do
 
 		it "last station" do
 			create_line
-			expect(line.last.name).to eq("Old Street")
+			expect(line.last_station.name).to eq("Old Street")
+		end
+
+		it "first station" do 
+			create_line
+			expect(line.first_station.name).to eq("bank")
 		end
 
 		it "that tunnel closure is closing the line" do
