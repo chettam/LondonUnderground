@@ -19,7 +19,5 @@ class Station
 
 	def add(tunnel)
 		tunnels << tunnel unless tunnel.nil?
-	end
-
-	
+	end	
 end

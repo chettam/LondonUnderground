@@ -10,13 +10,4 @@ class User
 	def is_inside_lu?
 		@is_inside_lu
 	end
-
-	# def is_inside(train)
- # 		train
-	# end
-
-	# def train
-	# 	@train
-	# end
-
 end

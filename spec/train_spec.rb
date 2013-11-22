@@ -16,6 +16,10 @@ describe Train  do
 
 		it "a direction" do
 			create_line
+			train.toward = line.last_station
+			expect(train.toward.name).to eq ('Old Street')
+			train.toward = line.first_station
+			expect(train.toward.name).to eq ('Bank')	
 		end
 	end
 	context "should know" do
@@ -39,7 +43,7 @@ describe Train  do
 	end
 
 	def create_line
-		station_names =["bank","moorgate","Old Street"]
+		station_names =["Bank","Moorgate","Old Street"]
 		station_names.each do|station_name|
 			station = Station.new
 			station.name = station_name
