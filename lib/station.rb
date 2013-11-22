@@ -1,8 +1,10 @@
 require_relative 'public_container'
+require_relative 'train_container'
 
 class Station
 
 	include PublicContainer
+	include TrainContainer
 
 	attr_accessor :line
 

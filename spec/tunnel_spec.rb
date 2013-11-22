@@ -3,6 +3,7 @@ require_relative '../lib/tunnel'
 describe Tunnel  do
 
 	let(:tunnel) {Tunnel.new}
+	let(:train) {Train.new}
 
 	context "should have" do
 		it "a name" do
@@ -21,6 +22,11 @@ describe Tunnel  do
 		it "if it is closed" do
 			tunnel.is_opened = false
 			expect(tunnel.is_opened?).to be_false
+		end
+
+		it "if it has a train" do
+			tunnel.has = train
+			expect(tunnel.has).to eq(train)
 		end
 
 	end

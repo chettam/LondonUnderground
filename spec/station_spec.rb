@@ -5,6 +5,7 @@ describe Station  do
 	let(:station) {Station.new}
 	let(:line) {Line.new}
 	let(:tunnel) {Tunnel.new}
+	let(:train) {Train.new}
 
 	context "should have" do
 		it "a name" do
@@ -28,6 +29,11 @@ describe Station  do
 		it "if it is closed" do
 			station.is_opened = false
 			expect(station.is_opened?).to be_false
+		end
+
+		it "if it has a train" do
+			station.has = train
+			expect(station.has).to eq(train)
 		end
 
 	end

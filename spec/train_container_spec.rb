@@ -12,7 +12,7 @@ describe "train_container"  do
 	end
 
 	context "should know" do
-		it "if it had a train" do
+		it "if it has a train" do
 			holder.has = train
 			expect(holder.has).to eq(train)
 		end
