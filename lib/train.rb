@@ -16,6 +16,5 @@ class Train
 
 	def is_operational?
 		is_opened?
-	end
-	
+	end	
 end

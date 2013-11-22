@@ -5,6 +5,7 @@ describe Line  do
 	let(:line) {Line.new}
 	let(:station) {Station.new}
 	let(:tunnel) {Tunnel.new}
+	let(:train) {Train.new}
 	context "should have" do
 		it "a name" do
 			line.name = "Northern Line"
@@ -30,14 +31,22 @@ describe Line  do
 			expect(line.is_opened?).to be_false
 		end
 
-		it "last station" do
+		it " it's last station" do
 			create_line
 			expect(line.last_station.name).to eq("Old Street")
 		end
 
-		it "first station" do 
+		it "it's first station" do 
 			create_line
-			expect(line.first_station.name).to eq("bank")
+			expect(line.first_station.name).to eq("Bank")
+		end
+
+		it "it's next station" do
+			create_line
+			train.toward = line.last_station
+			train.is_at  = line.first_station
+			next_stop = line.next_station(train.is_at,train.toward)
+			expect(next_stop.name).to eq ("Moorgate")
 		end
 
 		it "that tunnel closure is closing the line" do
@@ -54,7 +63,7 @@ describe Line  do
 	end
 
 	def create_line
-		station_names =["bank","moorgate","Old Street"]
+		station_names =["Bank","Moorgate","Old Street"]
 		station_names.each do|station_name|
 			station = Station.new
 			station.name = station_name
