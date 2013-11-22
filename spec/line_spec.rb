@@ -30,6 +30,10 @@ describe Line  do
 			expect(line.is_opened?).to be_false
 		end
 
+		it "that tunnel closure is closing the line" do
+		end
+
+
 	end
 	context "should by default" do
 		it "be opened" do
