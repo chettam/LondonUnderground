@@ -1,5 +1,6 @@
 require_relative 'public_container'
 
+
 class Line
 
 	include PublicContainer
@@ -41,5 +42,11 @@ class Line
 
 	def find_index(current_station,station_list)
 	 station_list.find_index{|station| station == current_station} 
+	end
+
+	def create_tunnel(origin_station,destination_station)
+		 tunnel = Tunnel.new
+		 origin_station.add(tunnel)
+		 destination_station.add(tunnel)
 	end
 end

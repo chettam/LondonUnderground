@@ -9,6 +9,4 @@ class Tunnel
 	def initialize
 		self.is_opened = true
 	end
-
-	
 end
