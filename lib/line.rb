@@ -16,4 +16,8 @@ class Line
 	def add(station)
 		stations << station unless station.nil?
 	end	
+
+	def last
+		stations.last
+	end
 end

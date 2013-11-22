@@ -30,8 +30,14 @@ describe Line  do
 			expect(line.is_opened?).to be_false
 		end
 
+		it "last station" do
+			create_line
+			expect(line.last.name).to eq("Old Street")
+		end
+
 		it "that tunnel closure is closing the line" do
 		end
+
 
 
 	end
@@ -40,5 +46,14 @@ describe Line  do
 			expect(line.is_opened?).to be_true
 		end
 
+	end
+
+	def create_line
+		station_names =["bank","moorgate","Old Street"]
+		station_names.each do|station_name|
+			station = Station.new
+			station.name = station_name
+			line.add(station)
+		end
 	end
 end
