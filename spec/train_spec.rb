@@ -4,6 +4,7 @@ describe Train  do
 
 	let(:train) {Train.new}
 	let(:line) {Line.new}
+	let(:station) {Station.new}
 
 
 
@@ -33,12 +34,18 @@ describe Train  do
 			expect(train.is_operational?).to be_false
 		end
 
+		it "it's current location" do
+			station.name ="Bank"
+			train.is_at = station
+			expect(train.is_at.name).to eq("Bank")
+		end
 	end
 
 	context "should by default" do
 		it "be opened" do
 			expect(train.is_operational?).to be_true
 		end
+
 		
 	end
 

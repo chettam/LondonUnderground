@@ -2,7 +2,7 @@ require_relative 'public_container'
 
 class Train
 
-	attr_accessor :toward
+	attr_accessor :toward , :is_at
 
 	include PublicContainer
 
