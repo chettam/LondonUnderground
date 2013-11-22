@@ -46,6 +46,7 @@ class Line
 
 	def create_tunnel(origin_station,destination_station)
 		 tunnel = Tunnel.new
+		 tunnel.name = origin_station.name + "-" + destination_station.name
 		 origin_station.add(tunnel)
 		 destination_station.add(tunnel)
 	end

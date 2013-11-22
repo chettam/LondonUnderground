@@ -4,6 +4,7 @@ describe Tunnel  do
 
 	let(:tunnel) {Tunnel.new}
 	let(:train) {Train.new}
+	let(:line) {Line.new}
 
 	context "should have" do
 		it "a name" do
@@ -11,6 +12,14 @@ describe Tunnel  do
 			expect(tunnel.name).to eq ("Northern Line")
 		end
 
+		it "a name like stationA.name-StationB.name" do
+			stationA = Station.new
+			stationA.name = "Bank"
+			stationB = Station.new
+			stationB.name = "Moorgate"
+			line.create_tunnel(stationA,stationB)
+			expect(stationA.tunnels.first.name).to eq("Bank-Moorgate")
+		end
 	end
 	context "should know" do
 

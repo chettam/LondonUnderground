@@ -35,7 +35,6 @@ describe Station  do
 			station.has = train
 			expect(station.has).to eq(train)
 		end
-
 	end
 
 	context "should by default" do

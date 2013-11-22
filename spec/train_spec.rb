@@ -39,6 +39,8 @@ describe Train  do
 			train.is_at = station
 			expect(train.is_at.name).to eq("Bank")
 		end
+		it "it's current location could be a tunnel" do
+		end
 	end
 
 	context "should by default" do
