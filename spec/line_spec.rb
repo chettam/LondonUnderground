@@ -45,13 +45,13 @@ describe Line  do
 			create_line
 			train.toward = line.last_station
 			train.is_at  = line.first_station
-			next_stop = line.next_station(train.is_at,train.toward)
+			next_stop = line.next_station(train.is_at,train.was_at,train.toward)
 			expect(next_stop.name).to eq ("Moorgate")
 		end
 
 		it "how to add a tunnels between stations" do
 			create_line
-			next_stop = line.next_station(line.first_station,line.last_station)
+			next_stop = line.next_station(line.first_station,line.first_station,line.last_station)
 			line.create_tunnel(line.first_station,next_stop)
 			expect(line.first_station.tunnels).to eq(next_stop.tunnels)
 		end

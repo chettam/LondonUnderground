@@ -19,7 +19,7 @@ describe Train  do
 		it "a direction" do
 			create_line
 			train.toward = line.last_station
-			expect(train.toward.name).to eq ('Old Street')
+			expect(train.toward.name).to eq ('Angel')
 			train.toward = line.first_station
 			expect(train.toward.name).to eq ('Bank')	
 		end
@@ -40,6 +40,13 @@ describe Train  do
 			train.is_at = station
 			expect(train.is_at.name).to eq("Bank")
 		end
+
+		it "it's last station" do
+			station.name = "Bank"
+			train.was_at = station
+			expect(train.was_at.name).to eq("Bank")
+		end
+
 		it "it's current location could be a tunnel" do
 			station.name ="Bank"
 			tunnel.name = "Bank-Moorgate"
@@ -48,12 +55,21 @@ describe Train  do
 			expect(train.is_at.name).to eq("Bank-Moorgate")
 		end
 
-		it "how to move to the next location" do
+		it "how to move to the next location from station " do
 			create_line
 			create_tunnels
 			train.is_at = line.first_station
 			train.move(line,line.last_station)
 			expect(train.is_at.name).to eq("Bank-Moorgate")
+		end
+
+		it "how to move to the next location from tunnel " do
+			create_line
+			create_tunnels
+			train.is_at = line.first_station
+			train.move(line,line.last_station)
+			train.move(line,line.last_station)
+			expect(train.is_at.name).to eq("Moorgate")
 		end
 	end
 
@@ -66,7 +82,7 @@ describe Train  do
 	end
 
 	def create_line
-		station_names =["Bank","Moorgate","Old Street"]
+		station_names =["Bank","Moorgate","Old Street","Angel"]
 		station_names.each do|station_name|
 			station = Station.new
 			station.name = station_name
@@ -76,7 +92,7 @@ describe Train  do
 	def create_tunnels
 		toward = line.last_station
 		line.stations.each do |station| 
-			line.create_tunnel(station,line.next_station(station,toward)) 
+			line.create_tunnel(station,line.next_station(station,station,toward)) 
 		end
 	end
 end

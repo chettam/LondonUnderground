@@ -2,7 +2,7 @@ require_relative 'public_container'
 
 class Train
 
-	attr_accessor :toward , :is_at
+	attr_accessor :toward , :is_at , :was_at
 
 	include PublicContainer
 
@@ -18,9 +18,15 @@ class Train
 		is_opened?
 	end	
 
-	def move(line,toward)
-		next_station = line.next_station(@is_at,toward)
-		next_tunnel =  (@is_at.tunnels & next_station.tunnels).first
-		@is_at = @is_at.is_a?(Station) ? next_tunnel : next_station
+	def move(line,toward)	
+		next_station = line.next_station(was_at,is_at,toward)	
+		next_tunnel =  (is_at.tunnels & next_station.tunnels).first
+		if was_at == is_at
+			@is_at = next_tunnel
+		else
+			@is_at = next_station
+			@was_at = is_at
+		end
+		
 	end
 end
